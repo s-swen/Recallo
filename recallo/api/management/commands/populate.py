@@ -3,7 +3,7 @@ from api.models import User
 from api.factories import StudyItemFactory
 
 class Command(BaseCommand):
-    help = 'Creates users'
+    help = 'populate the db...'
     def handle(self, *args, **kwargs):
         admin = User.objects.filter(username='admin').first()
         if not admin:
