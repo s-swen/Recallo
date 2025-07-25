@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # added
-    'rest_framework',
-    'api',
-    'rest_framework_simplejwt',
+    "rest_framework",
+    "api",
+    "rest_framework_simplejwt",
+    "silk",
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # added
+    "silk.middleware.SilkyMiddleware",
 ]
 
 ROOT_URLCONF = "recallo.urls"
@@ -127,11 +130,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # added
 
-AUTH_USER_MODEL = 'api.User'
+AUTH_USER_MODEL = "api.User"
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
     ]
 }
